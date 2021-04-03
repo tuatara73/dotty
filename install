@@ -14,6 +14,8 @@ function create_link() {
 create_link alacritty.yml ~/.config/alacritty/alacritty.yml ~/.config/alacritty
 create_link config.fish ~/.config/fish/config.fish ~/.config/fish
 create_link gitconfig ~/.gitconfig  
+create_link vimrc  ~/.config/nvim/init.vim : ~/.config/nvim  
+
 
 if [ "$(uname)" == "Linux" ]; then
     echo "Os is Linux"
@@ -31,5 +33,7 @@ else
     brew install ack
     brew install htop
     brew install --cask alacritty
+    brew install hugo
+    brew install diff-so-fancy
 fi
 

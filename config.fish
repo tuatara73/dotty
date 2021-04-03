@@ -2,6 +2,7 @@ alias cat=bat
 alias ls=exa
 alias ll="la -la"
 alias getenv="launchctl getenv"
+alias vim nvim
 alias k kubectl
 alias p python3
 set PATH ~/bin $PATH
