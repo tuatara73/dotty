@@ -30,5 +30,6 @@ else
     brew install jq
     brew install ack
     brew install htop
+    brew install --cask alacritty
 fi
 
