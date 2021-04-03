@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+function create_link() {
+    if [ $# -eq 3 ]; then
+        mkdir -p $3
+    fi
+    if [ -e "$2" ]; then
+            echo "$2 exist"
+        else
+            ln -s "$(pwd)/$1" "$2"
+    fi
+}
+
+create_link alacritty.yml ~/.config/alacritty/alacritty.yml ~/.config/alacritty
+create_link config.fish ~/.config/fish/config.fish ~/.config/fish
+create_link gitconfig ~/.gitconfig  
+
+if [ "$(uname)" == "Linux" ]; then
+    echo "Os is Linux"
+else
+    isFish=$(which fish)
+    if [[ -z "$isFish" ]]; then
+        curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+    else
+        echo fish is already installed
+    fi
+    brew install kubernetes-cli
+    brew install exa
+    brew install bat
+    brew install jq
+    brew install ack
+    brew install htop
+fi
+
